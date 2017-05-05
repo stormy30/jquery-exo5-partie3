@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Jquery exercice n°5 base 3</title>
+        <link rel="stylesheet" href="style.css">
+        <script
+           src="https://code.jquery.com/jquery-3.2.1.js"
+           integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+           crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+        <h1>Exercice5 Jquery base 3</h1>
+        <p><b>Charger la dernière version de Jquery et lier le fichier dans la balise head du document html.</b></p>
+
+        <hr>
+        <!-------------------------------------------- Exercice 5 -------------------------------------->
+        <h3><em>Exercice 5</em></h3>
+        <p>Construire un carré en html/css. Et faire en sorte que :</p>
+        <ul>
+            <li>Lorsque l'on appuie sur une touche de <br>direction(haut, bas, gauche, droite) le carré se déplace de 10 px dans la bonne direction.</li>
+            <li>Lorsque le bloc atteint un bord de la page, il réaparaisse de l'autre côté.</li>
+
+        </ul>
+      </p>
+
+
+     <div id="carré" >carré!</div>
+
+              <script>
+
+
+
+
+              // $(document).ready(function(){
+              //      $(window).keydown(function(37){
+              //          $("p").animate({left: "+=100px"});
+              //      });
+              //      $(window).click(function(39){
+              //      $("p").animate({left: "0"});
+              //      });
+              //  });
+
+              $(document).ready(function(){
+              	$(window).keydown(function(e){
+              		switch (e.keyCode) {
+              			case 37: // flèche gauche
+              				$('#carré').stop().animate({left:'-=10px'});
+              				break;
+
+                    case 38: //flèche haut
+                      $("#carré").stop().animate({top:'-=10'});
+              				break;
+
+                      case 39: // flèche droite
+                				$('#carré').stop().animate({left:'+=10'});
+                				break;
+
+                    case 40: //flèche bas
+                        $("#carré").stop().animate({top:'+=10'});
+                				break;
+              		}
+              	});
+              });
+              </script>
+
+
+
+
+          <hr>
+
+          <hr>
+
+
+          </body>
+          </html>
